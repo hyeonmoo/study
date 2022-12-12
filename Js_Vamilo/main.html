@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:700px;
+            margin:10px auto;
+            padding:10px;
+            text-align: center;
+            font-family: sf싸락눈;
+        }
+        img{
+            width:700px;
+        }
+        a{
+            text-decoration: none;
+            color:#8af;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="/img/vamilomain.jpg">
+        <p><a href="vamilo.html" onclick="loadURL(this.href);return false;">자세히보기</a></p>
+    </div>
+    <script>
+        /*
+        현재 창의 부모를 찾아서 그 창의 location에 매개변수 값 url을 넘겨주고 현재 창은 닫기
+        */
+        function loadURL(url){
+            window.opener.location=url;
+            window.close();
+        }
+    </script>
+</body>
+</html>

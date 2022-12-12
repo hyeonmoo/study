@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamilo</title>
+</head>
+<body>
+    <script>
+        popWin=window.open("main.html","popup","width=750, height=750");
+        popWin.opener=self; //popWin 객체를 만든 부모가 자신이라 알려줌
+    </script>
+</body>
+</html>
