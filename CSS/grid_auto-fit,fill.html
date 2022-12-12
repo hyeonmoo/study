@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sf싸락눈;
+        }
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            margin-bottom:20px;
+            grid-gap:20px 30px;
+        }
+        .wrapper:nth-of-type(2){
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+        .items{
+            padding:10px;
+        }
+        .items:nth-child(odd){
+            background-color: #bbb;
+        }
+        .items:nth-child(2n){
+            background-color: #111;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="items">현실에 대한 눈은 감을 수 있어도 기억에 대한 눈은 감을 수 없다.</div>
+        <div class="items">노를 젓다가 노를 놓쳐버렸다. 비로소 넓은 물을 돌아다보았다.</div>
+        <div class="items">경험은 최고의 교사이다. 다만 수업료가 지나치게 비싸다고 할까.</div>
+        <div class="items">인간은 아직까지도 모든 컴퓨터 중에서 가장 훌륭한 컴퓨터이다.</div>
+        <div class="items">고통을 주지 않는 것은 쾌락도 주지 않는다.</div>
+        <div class="items">핑계를 잘 대는 사람은 거의 좋은 일을 하나도 해내지 못한다.</div>
+    </div>
+    <div class="wrapper">
+        <div class="items">현실에 대한 눈은 감을 수 있어도 기억에 대한 눈은 감을 수 없다. <br>단 하나의 하늘에 올려진 고마워하는 생각이 완전한 기도이다.<br>근심은 칼날에 스는 녹과 같다. 기계를 못 쓰게 만드는 것은 계속된 사용이 아니라 마찰이다.</div>
+        <div class="items">노를 젓다가 노를 놓쳐버렸다. 비로소 넓은 물을 돌아다보았다.</div>
+        <div class="items">경험은 최고의 교사이다. 다만 수업료가 지나치게 비싸다고 할까.</div>
+        <div class="items">인간은 아직까지도 모든 컴퓨터 중에서 가장 훌륭한 컴퓨터이다.<br>미지를 향해 출발하는 사람은 누구나 외로운 모험에 만족해야 한다.</div>
+        <div class="items">고통을 주지 않는 것은 쾌락도 주지 않는다.</div>
+        <div class="items">핑계를 잘 대는 사람은 거의 좋은 일을 하나도 해내지 못한다.</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxModel</title>
+    <style>
+        *{
+            margin:20px;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: 25pt;
+            line-height: 100px;
+            border-width:5px;
+            font-family: '카페24 아네모네';
+        }
+        .box1{
+            box-shadow: 2px -2px 5px 0px;
+            border-style: solid;
+        }
+        .box2{
+            border-style: dotted;
+            border-color: skyblue;
+            box-shadow: 0px 0px 15px 10px lightblue;
+            color: rgb(79, 79, 255);
+            border-radius: 60px/30px;
+        }
+        .box3{
+            border-top-style: dashed;
+            border-right-style: dotted;
+            border-bottom-style: solid;
+            border-left-style: double;
+            border-width: 8px 6px 4px 5px;
+            box-shadow: 5px 5px 5px;
+            border-color: plum greenyellow;
+            border-radius: 20px 50px 0px 30px;
+        }
+        #round{
+            box-sizing: border-box;
+            width: 200px;
+            height:200px;
+            border-radius: 100px;
+            border: 5px solid white;
+            box-shadow: 0px 0px 20px 10px gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">실선테두리</div>
+    <div class="box2">점선테두리</div>
+    <div class="box3">대쉬테두리</div>
+    <img src="../img/Teemo.PNG" id="round">
+</body>
+</html>

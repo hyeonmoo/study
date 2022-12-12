@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Gradient</title>
+    <style>
+        div{
+            width:300px;
+            height:200px;
+            border-radius: 10px;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+        .gradto{
+            background: linear-gradient(to right top, red, orange, yellow, green, blue, navy, purple, lavender);
+        }
+        .graddeg{
+            background: linear-gradient(330deg, rgb(253, 227, 231), salmon 40%, skyblue)
+        }
+        .rad1{
+            border-radius: 50%;
+            background: radial-gradient(blue, aliceblue, blue 50%);
+        }
+        .rad2{
+            background: radial-gradient(circle at 20% 50%, lightblue, aliceblue, black);
+        }
+        .repgrad{
+            background: repeating-linear-gradient(to right, beige, black 20px);
+        }
+        .reprad{
+            background: repeating-radial-gradient(circle, aliceblue, aliceblue 20px, lightblue 20px, lightblue 40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="gradto"></div>
+    <div class="graddeg"></div>
+    <div class="rad1"></div>
+    <div class="rad2"></div>
+    <div class="repgrad"></div>
+    <div class="reprad"></div>
+</body>
+</html>

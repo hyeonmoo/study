@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{font-family: '이서윤체';}
+        ul{list-style: none;}
+        li{
+            width:150px;
+            display: inline-block;
+            margin:10px;
+        }
+        li a{
+            padding: 5px 20px;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 900;
+        }
+        li a[href]{
+            background: gold;
+            font-size: 15px;
+            border:1px solid #ccc;
+            font-weight: 600;
+        }
+        li a[target="_blank"]{
+            padding-right:30px;
+            background: url(../img/pen.png) no-repeat center right;
+            background-size:20px 20px;
+        }
+        li a[class ~="button"]{
+            box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            border:1px solid #222;
+        }
+        li a[title|=us]{background:url(../img/pen.png) no-repeat left center;}
+        li a[title^=jap]{background:white; color:red;}
+        li a[href$=hwp]{
+            background: url(../img/pen.png) no-repeat center right;
+            padding-right: 25px;
+        }
+        li a[href*=naver]{
+            background: #66c971;
+            color:white;
+        }
+        li a[href*=google]{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a>메인메뉴:</a></li>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#" target="_blank">메뉴 2</a></li><br>
+        <li><a>버튼명암:</a></li>
+        <li><a href="#" class="button">메뉴 3</a></li>
+        <li><a href="#" class="flat button">메뉴 4</a></li><br>
+        <li><a>외국어서비스:</a></li>
+        <li><a href="#" title="us-eng">영어</a></li>
+        <li><a href="#" title="japan">일어</a></li><br>
+        <li><a>확장자:</a></li>
+        <li><a href="intro.hwp">hwp</a></li>
+        <li><a href="intro.xls">xls</a></li><br>
+        <li><a>참고사이트:</a></li>
+        <li><a href="https://www.naver.com/">NAVER</a></li>
+        <li><a href="https://www.google.com/">
+            <span style="color:#4285f4;">G</span>
+            <span style="color:#ea4335">o</span>
+            <span style="color:#fbbc05">o</span>
+            <span style="color:#4285f4">g</span>
+            <span style="color:#34a853">l</span>
+            <span style="color:#ea4335">e</span>
+        </a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:800px;
+            height:200px;
+            margin:20px auto;
+            background-color: beige;
+        }
+        .origin{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+            float: left;
+            margin:40px 80px;
+        }
+        .origin > div{
+            width:100px;
+            height:100px;
+        }
+        .origin > div img{
+            width:100px;
+            height:100px;
+        }
+        #movex:hover{
+            transform:translateX(50px);
+        }
+        #movey:hover{
+            transform:translateY(20px);
+        }
+        #movexy:hover{
+            transform:translate(20px, 20px);
+        }
+        #scalex:hover{
+            transform: scaleX(2);
+        }
+        #scaley:hover{
+            transform: scaleY(1.5);
+        }
+        #scalexy:hover{
+            transform: scale(0.7);
+        }
+        #rotate1:hover{
+            transform: rotate(30deg);
+        }
+        #rotate2:hover{
+            transform: rotate(-30deg);
+        }
+        .rotatex:hover{
+            transform: rotateX(55deg);
+        }
+        .rotatey:hover{
+            transform: rotateY(55deg);
+        }
+        .rotatez:hover{
+            transform: rotateZ(55deg);
+        }
+        .rotatexyz:hover{
+            transform: rotate3d(2.5,1.2,-1.5,55deg);
+        }
+        #pers{
+            perspective: 300px;
+        }
+        .container:nth-of-type(5) .origin{
+            width:100px;
+            height:100px;
+            margin:40px 47px;
+            float:left;
+            border:1px solid black;
+            perspective: 200px;
+        }
+        .container:nth-of-type(5) .origin >div{
+            transition: all 2s;
+        }
+        #skewx:hover{
+            transform: skewX(30deg);
+        }
+        #skewy:hover{
+            transform: skewY(30deg);
+        }
+        #skew:hover{
+            transform: skew(30deg,15deg);
+        }
+        #box1{
+            background:url(../img/dog.jpg) no-repeat left top;
+            background-size:cover;
+            transition-property: width, height;
+            transition-duration: 2s, 1s;
+        }
+        #box1:hover{
+            width:200px;
+            height:120px;
+        }
+        #box2{
+            background: #fb5;
+            transition: 5s ease-out;
+        }
+        #box2:hover{
+            width:200px;
+            height:200px;
+            background: #f50;
+            transform: rotate(3600deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="origin">
+            <div id="movex"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="movey"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="movexy"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin">
+            <div id="scalex"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="scaley"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="scalexy"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin">
+            <div id="rotate1"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="rotate2"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin">
+            <div><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div class="rotatex"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin" id="pers">
+            <div class="rotatex"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin">
+            <div class="rotatex"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div class="rotatey"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin" id="pers">
+            <div class="rotatez"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin" id="pers">
+            <div class="rotatexyz"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin">
+            <div id="skewx"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin">
+            <div id="skewy"><img src="../img/dog.jpg"></div>
+        </div>
+        <div class="origin" id="pers">
+            <div id="skew"><img src="../img/dog.jpg"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="origin" id="box1"></div>
+        <div class="origin" id="box2"></div>
+    </div>
+</body>
+</html>

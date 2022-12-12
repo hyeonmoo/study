@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 상속</title>
+    <style>
+        body{
+            background-color: #eee;
+            font-family: '심경하체';
+        }
+        section{
+            width:600px;
+            margin:20px auto;
+        }
+        p{      /*모든 선택자 p에 공통적으로 적용*/
+            width:500px;
+            padding:10px;
+            background-color: #fff;
+            border:1px solid #ccc;
+            line-height: 2;
+        }
+        section p{color:blue;} /*자식선택자의 자식선택자 p에도 적용*/
+        section > p{color:red;} /*자식선택자의 자식선택자 p에는 적용X */
+        h1 ~ p{ /*h1요소의 모든 형제요소 p에 적용 */
+            background-color: lightblue;
+            color:blue;
+        }
+        h1 + p{ /*h1요소의 형제 요소 p중 첫번째 p요소에 적용 */
+            background-color: #222;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>예약 방법 & 사용 요금</h1>
+        <p>아직 온라인 예약 신청이 준비되어 있지 않습니다<br>
+        전화(xxx-xxxx-xxxx)로 문의 바랍니다.</p>
+        <div>
+            <p>가족실(2~4인): 60,000원/일</p>
+            <p>도미토리(4인 공용): 25,000원/일</p>
+        </div>
+        <p>온라인 예약 서비스는 곧 준비될 예정입니다.</p>
+    </section>
+    <p>온라인 예약 신청 서비스는 내년 상반기 중 제공드릴 예정입니다.</p>
+</body>
+</html>

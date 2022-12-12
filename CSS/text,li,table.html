@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>property</title>
+    <style>
+        *{
+            font-family: '카페24 아네모네에어';
+            font-size:10px;
+        }
+        p, div{
+            width:600px;
+            border:1px solid #222;
+            padding:10px;
+            margin:10px;
+        }
+        .type1{
+            text-align:center;
+            line-height:0.9;
+            text-decoration: underline;
+        }
+        .type2{
+            text-align:justify;
+            line-height:2.5;
+            text-decoration: line-through;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        h1{
+            font-size:60px;
+        }
+        .text1{
+            color:rgb(158, 30, 30);
+            text-shadow: 2px 2px black;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        .text2{
+            color:black;
+            text-shadow: 5px 5px 5px salmon;
+            text-transform: lowercase;
+            letter-spacing: 0.5em;
+        }
+        .text3{
+            color: aliceblue;
+            text-shadow: 7px -7px 20px rgb(197, 102, 197);
+            text-transform: capitalize;
+        }
+        .text4{
+            color: aliceblue;
+            text-shadow: 0px 0px 20px blue;
+            text-transform: capitalize;
+            word-spacing: 0.5em;
+        }
+        .list1{
+            list-style-type: upper-alpha;
+        }
+        .list2{
+            list-style-type: none;
+            list-style-position: inside;
+        }
+        .list3{
+            list-style-image: url(../img/blit.png);
+            list-style-position: outside;
+        }
+        table{
+            caption-side:bottom;
+            border:1px solid black;
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        td,th{
+            border:1px dotted black;
+            padding:10px;
+            text-align: center;
+        }
+        .heading{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p> 
+    <p class="type1">껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p> 
+    <p class="type2">껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p> 
+    <p><a href="#">하이퍼링크에 밑줄 없애기</a></p><br>
+    <hr><br>
+    <div>
+        <h1 class="text1">html</h1>
+        <h1 class="text2">Html</h1>
+        <h1 class="text3">java script</h1>
+        <h1 class="text4">java script</h1>
+    </div>
+    <br><hr><br>
+    <div>
+        <h1 style="font-size: 30px;">도서 시리즈</h1>
+        <ol class="list1">
+            <li>Do it! 시리즈</li>
+            <li>첫 코딩 시리즈</li>
+            <li>된다 시리즈</li>
+        </ol>
+        <ul class="list2">
+            <li>Do it! 시리즈</li>
+            <li>첫 코딩 시리즈</li>
+            <li>된다 시리즈</li>
+        </ul>
+        <ul class="list3">
+            <li>Do it! 시리즈</li>
+            <li>첫 코딩 시리즈</li>
+            <li>된다 시리즈</li>
+        </ul>
+    </div>
+    <div>
+        <h1 style="font-size:30px;">상품 구성</h1>
+        <table>
+            <caption>선물용과 가정용 상품 구성</caption>
+            <col class="heading">
+            <tr class="heading">
+                <th>용도</th>
+                <th>중량</th>
+                <th>수량</th>
+                <th>가격</th>
+            </tr>
+            <tr>
+                <th rowspan="2">선물용</th>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>35,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+            </tr>
+            <tr>
+                <th rowspan="2">용도</th>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>30,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>47,000원</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

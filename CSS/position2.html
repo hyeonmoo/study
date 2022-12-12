@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test</title>
+    <style>
+        *{
+            padding:0;
+        }
+        #bg{
+            background:url(../img/Landing.jpeg) no-repeat fixed;
+            width:740px;
+            height:540px;
+            position:relative;
+        }
+        h1{
+            font-family: '카페24 아네모네';
+            color:rgba(252, 255, 238, 0.4);
+            text-shadow: 0 0 10px rgba(213, 235, 135, 0.5);
+            font-size:100px;
+        }
+        #text1{
+            position: absolute;
+            top:-70px;
+            left:5px;
+        }
+        #text2{
+            position: absolute;
+            bottom: -75px;
+            right:10px;
+            color:rgba(0, 0, 0, 0.4);
+            text-shadow: 0 0 10px rgba(71, 71, 71, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <h1 id="text1">SUPERHERO</h1>
+        <h1 id="text2">LANDING</h1>
+    </div>
+</body>
+</html>
