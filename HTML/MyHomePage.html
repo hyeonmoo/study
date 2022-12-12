@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gugi&family=Ms+Madi&display=swap');
+        *{
+            box-sizing: border-box;
+            margin:0; padding:0;
+            text-align: center;
+            color:white;
+        }
+        body{background-color: black;}
+        ul{list-style:none;}
+        a{text-decoration: none;}
+        #container{
+            width:1200px; height:800px;
+            margin:20px auto;
+            display: grid;
+            grid-template-areas: 
+            "hd nav nav nav nav nav"
+            "img img img img img img"
+            "img img img img img img"
+            "img img img img img img"
+            "tab tab tab quik quik quik"
+            "tab tab tab quik quik quik"
+            "tab tab tab quik quik quik"
+            "footer footer footer footer footer footer";
+        }
+        /* 로고 영역 */
+        header{ grid-area:hd;
+            width:200px; height:100px;
+            font-family: 'Ms Madi', cursive;
+            font-size:30px;
+            font-weight: 900;
+            text-shadow: 0 0 7px aliceblue;
+            line-height: 100px;
+        }
+        header:hover{
+            text-decoration:underline;
+            cursor:pointer;
+        }
+        /* 메뉴 영역 */
+        nav{ grid-area:nav;
+            width:1000px; height:100px;
+            font-family: 'Gugi', cursive;
+        }
+        nav>ul{
+            height:40px;
+            margin-top:40px;
+        }
+        nav>ul>li{
+            float:left;
+            width:250px; height:40px;
+            position:relative;
+        }
+        nav>ul>li:hover>a{color:#aaa;}
+        nav>ul>li>ul{
+            display:none;
+            position:absolute; left:50px;
+            width:150px;
+            background:rgba(150, 150, 150, 0.6);
+            padding:10px;
+            margin-top:20px;
+        }
+        nav>ul>li:hover>ul{
+            display:block;
+            z-index:10;
+        }
+        nav>ul>li>ul>li{margin:10px;}
+        nav>ul>li>ul>li>a:hover{
+            color:red;
+        }
+        /* 이미지 슬라이드 영역 */
+        #slideImg{ grid-area:img;
+            width:100%; height:300px;
+            overflow:hidden;
+            position:relative;
+        }
+        #slides{position:absolute;}
+        #slides>img{width:1200px; height:300px;}
+        #slides>button{
+            position:absolute;
+            height:300px;
+            top:0;
+            border:none;
+            padding:20px;
+            background-color: transparent;
+            color:black;
+            font-weight: 800;
+            font-size:24px;
+            opacity:0.5;
+        }
+        #prev{left:0;}
+        #next{right:0;}
+        #slides>button:hover{
+            background-color: #222;
+            color:#fff;
+            opacity: 0.6;
+        }
+        /* 탭 메뉴 영역 */
+        #tab{ grid-area:tab;
+            width:600px; height:300px;
+            text-align: justify;
+        }
+        #tab input[type="radio"]{display: none;}
+        #tab label{
+            display: inline-block;
+            padding:15px 25px;
+            font-family: 'Gugi', cursive;
+            font-weight: 600;
+            color:#fff;
+            border:1px solid transparent;
+        }
+        #tab label:hover{color:#aaa; cursor: pointer;}
+        #tab input:checked+label{
+            color:lightblue;
+            background-color: #333;
+        }
+        #tab>div{
+            display: none;
+            padding:20px 0 0;
+            border-top:1px solid #ddd;
+        }
+        #tab>div h2{display: none;}
+        #notice ul{list-style:disc; margin-left:30px;}
+        #notice ul li{
+            line-height: 1.5;
+            text-align: justify;
+            font:20px Dongle;
+        }
+        #gallery ul li{display: inline;}
+        #gallery img{
+            width:150px; height:150px;
+            border-radius: 30px;
+            box-shadow: 0 0 3px 3px white;
+            margin:20px;
+        }
+        #tab1:checked~#notice,
+        #tab2:checked~#gallery{display: block;;}
+        /* 퀵 링크 영역 */
+        #quik{ grid-area:quik;
+            width:600px;
+            font-family:Dongle;
+            font-size:25px;
+            line-height: 1;
+        }
+        #quik>a{
+            width:150px; height:200px;
+            display: inline-block;
+            margin-top:60px;
+            margin-left:30px;
+        }
+        #quik>a:hover p{text-decoration: underline;}
+        #quik>a>img{
+            border-radius: 10px;
+            box-shadow: 0 0 5px white;
+        }
+        /* 푸터 영역 */
+        footer{ grid-area:footer;
+            width:100%; height: 100px;
+        }
+        footer ul li{
+            display: inline-block;
+            border-right: 1px solid #ddd;
+            padding:0 10px;
+            font-size:0.8em;
+        }
+        footer ul li:last-of-type{border:0;}
+        footer ul li:hover a{text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>MyLovelyFriend</header>
+        <nav>
+            <ul id="topMenu">
+                <li>
+                    <a href="#">교육 프로그램 ▼</a>
+                    <ul>
+                        <li><a href="#">친해지기</a></li>
+                        <li><a href="#">어질리티</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">맞춤 여행 ▼</a>
+                    <ul>
+                        <li><a href="#">제주도 여행</a></li>
+                        <li><a href="#">국내 명소</a></li>
+                        <li><a href="#">힐링 워크샵</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">갤러리</a></li>
+                <li><a href="#">문의하기</a></li>
+            </ul>
+        </nav>
+        <div id="slideImg">
+            <div id="slides">
+                <img src="img/dogs.png" alt="">
+                <img src="img/FlyingSquirrel.png" alt="">
+                <img src="img/horizon.png" alt="">
+                <img src="img/panorama.png" alt="">
+                <button id="prev">&lang;</button>
+                <button id="next">&rang;</button>
+            </div>
+        </div>
+        <section id="tab">
+            <input type="radio" name="tabs" id="tab1" checked>
+            <label for="tab1">공지사항</label>
+            <input type="radio" name="tabs" id="tab2">
+            <label for="tab2">갤러리</label>
+            <div id="notice">
+                <h2>공지사항 내용입니다.</h2>
+                <ul>
+                    <li>사무실을 이전했습니다.</li>
+                    <li>[참가모집] 반려동물 교육 프로그램에 초대합니다.</li>
+                    <li>[참가모집] 반려견 어질리티 체험단을 모집합니다.</li>
+                    <li>청주지역 추천 반려견 놀이터</li>
+                    <li>반려견과 산책하기 좋은 제주도 여행지</li>
+                </ul>
+            </div>
+            <div id="gallery">
+                <h2>갤러리 내용입니다.</h2>
+                <ul>
+                    <li><img src="img/dog300.jpg" alt="포메"></li>
+                    <li><img src="img/boxdoll300.png" alt="박스인형"></li>
+                    <li><img src="img/stone300.jpg" alt="돌의정령"></li>
+                </ul>
+            </div>
+        </section>
+        <section id="quik">
+            <a href="https://youtu.be/EU1zXR4wRmY" target="_blank">
+                <img src="img/toto.png" alt="토토-로아람">
+                <p>toto-로아람</p>
+            </a>
+            <a href="https://youtu.be/bKCdqniN6B8" target="_blank">
+                <img src="img/mydog.jpg" alt="내 강아지-성진환">
+                <p>내 강아지-성진환</p>
+            </a>
+            <a href="https://youtu.be/4OZx4kjploo" target="_blank">
+                <img src="img/always.jpg" alt="언제나 내곁에-Lerry">
+                <p>언제나 내 곁에-Lerry</p>
+            </a>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">제휴제안</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">나만 강아지 없어</a></li>
+                <li><a href="#">㈜ MMoo Corp.</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        // 상단 메뉴영역
+        const navLis=document.getElementById('topMenu').querySelectorAll("li");
+        for(let ul of navLis){
+            let lis = ul.querySelectorAll("li");
+            for(let li of lis){
+                li.addEventListener("mouseover",function(){
+                    li.parentNode.parentNode.childNodes[1].style.color="#aaa";
+                })
+                li.addEventListener("mouseout", function(){
+                    li.parentNode.parentNode.childNodes[1].style.color="";
+                })
+            }
+        }
+        // 이미지영역 전환버튼
+        const prevBt=document.querySelector("#prev");
+        const nextBt=document.querySelector("#next");
+        const imgs=document.querySelectorAll("#slides img");
+        let imgCnt=0;
+        for(let img of imgs){
+            img.style.display="none";
+        }
+        imgs[imgCnt].style.display="block";
+        prevBt.addEventListener("click",function(){
+            imgs[imgCnt--].style.display="none";
+            if(imgCnt<0) imgCnt=imgs.length-1;
+            imgs[imgCnt].style.display="block";
+        })
+        nextBt.addEventListener("click",function(){
+            imgs[imgCnt++].style.display="none";
+            if(imgCnt==imgs.length) imgCnt=0;
+            imgs[imgCnt].style.display="block";
+        })
+    </script>
+</body>
+</html>
