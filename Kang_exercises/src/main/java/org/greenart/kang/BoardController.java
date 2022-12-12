@@ -1,0 +1,22 @@
+package org.greenart.kang;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+	@GetMapping("/list")
+	public String list(HttpServletRequest req) {
+		if(!loginCheck(req)) return "redirect:/login/login?toURL="+req.getRequestURL();
+		return "board";
+	}
+	private boolean loginCheck(HttpServletRequest req) {
+		HttpSession session=req.getSession();
+		return session.getAttribute("email")!=null;
+	}
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@font-face {
+    font-family: '마비노기';
+    src: url(../fonts/Mabinogi_Classic_OTF.woff);
+}
+
+*{
+    box-sizing: border-box;
+    margin:0; padding:0;
+    font: 300 9pt/1 마비노기;
+}
+a{text-decoration: none; color:white;}
+body{background-color: #121212;}
+/* 컨텐츠 영역 박스 */
+#container{
+    width:70%; height:65%;
+    display: grid;
+    grid-template-columns: 15% 25% 30% 30%;
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+}
+/* 각 항목 공통 효과 */
+.article{
+    border:1px solid white;
+    border-radius: 5px;
+    color:black;
+    margin: 5% 0;
+}
+.article:hover{
+    background-color: black;
+    transition:0.5s;
+    transform:scale(110%);
+}
+/* 칼럼 영역 */
+.colume{
+    margin: 0 4%;
+    height:100%;
+}
+#login_menu{
+    display:grid;
+    grid-template-rows: 60% 20% 20%;
+}
+#article_colume1{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+#article_colume2{
+    display: grid;
+    grid-template-rows: 50% 25% 25%;
+}
+
+/* 로고 디자인 */
+#logo{
+    background : url(../img/logo_main.png) no-repeat left center;
+    background-size: 100% 100%;
+    margin:5%;
+    height:98%;
+}
+
+/* 회원 정보 영역 */
+#loginInfo{
+    display: flex;
+    align-items: center;
+}
+#loginInfo>a{
+    display:block;
+    width:100%;
+    color:white;
+    line-height:3;
+    text-align: center;
+}
+/* 메뉴 */
+.menu{
+    text-align: center;
+}
+.menu a{
+    width:100%; height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 헬스클럽 위치정보 */
+#club_info a{
+    width:100%; height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:5px;
+}

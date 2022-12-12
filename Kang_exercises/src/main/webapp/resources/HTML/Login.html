@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap');
+        *{
+            font-family: Noto sans KR;
+            margin:0; padding:0;
+            box-sizing: border-box;
+            color: rgb(70,130,150);
+        }
+        form{
+            width:360px; height: 480px;
+            border: 3px solid rgb(70, 130, 150);
+            border-radius: 10px;
+            margin:30px auto;
+        }
+        .article, h1, .article>button{
+            width: 300px;
+            height: 40px;
+            margin:20px auto;
+        }
+        h1{
+            margin:90px auto 50px auto;
+            font: 800 50px Do Hyeon;
+        }
+        #msg{
+            text-align: center;
+            width:300px; height:20px;
+        }
+        .article input:not([type=checkbox]){
+            width:100%; height:100%;
+            padding:5px;
+            border:2px solid rgb(70, 130, 150);
+            border-radius: 5px;
+            color:rgb(70, 130, 150);
+        }
+        .article button{
+            margin:0 auto;
+            background-color: rgb(70, 130, 150);
+            border:0;
+            border-radius: 5px;
+            color:white;
+            font: 500 20px Do Hyeon;
+            cursor: pointer;
+        }
+        .article{text-align: center;}
+        .article>a{
+            text-decoration: none;
+            margin:0 5px;
+        }
+        .article>a:hover{text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Login</h1>
+        <div id="msg">
+
+        </div>
+        <div class="article">
+            <input type="email" id="email" name="email" class="textbox" placeholder="이메일 입력" required>
+        </div>
+        <div class="article">
+            <input type="password" id="pw" name="pw" class="textbox" placeholder="비밀번호" required>
+        </div>
+        <div class="article">
+            <button type="submit">로그인</button>
+        </div>
+        <div class="article">
+            <label><input type="checkbox" name="idRem">아이디 기억</label>
+            <a href="#">비밀번호 찾기</a>
+            <a href="#">회원가입</a>
+        </div>
+    </form>
+</body>
+</html>

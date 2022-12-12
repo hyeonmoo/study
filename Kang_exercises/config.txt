@@ -1,0 +1,2 @@
+car=org.greenart.kang.Truck
+engine=org.greenart.kang.Engine
