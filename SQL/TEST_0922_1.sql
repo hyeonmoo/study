@@ -1,0 +1,16 @@
+DROP SCHEMA IF EXISTS green_db;
+CREATE SCHEMA green_db;
+USE green_db;
+DROP TABLE IF EXISTS green;
+CREATE TABLE green(
+	idx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    age INT DEFAULT 20,
+    gender CHAR(4) DEFAULT '남자',
+    ipsail DATE DEFAULT '2022-09-22'
+);
+DESC green;
+ALTER TABLE green ADD address VARCHAR(30) NULL;
+DESC green;
+DROP TABLE green;
+DROP SCHEMA green_db;

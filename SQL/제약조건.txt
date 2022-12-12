@@ -1,0 +1,26 @@
+#제약조건 설정법
+설정 : ALTER TABLE table ADD CONSTRAINT [별칭] 제약조건;
+해제 : ALTER TABLE table DROP CONSTRAINT 별칭|제약조건;
+
+#기본 키 제약조건
+설정 : PRIMARY KEY(p_key)
+해제 : ALTER TABLE table DROP PRIMARY KEY;
+
+#외래 키 제약조건 설정
+설정 : FOREIGN KEY(f_key) REFERENCES 기존테이블(p_key or uq_key) [ON UPDATE CASCADE] ON DELETE CASCADE];
+해제 : ALTER TABLE table DROP FOREIGN KEY 외래키 제약조건 별칭;
+
+#체크 제약조건
+설정 : ALTER TABLE table ADD CONSTRAINT [별칭] CHECK(조건);
+해제 : ALTER TABLE table DROP CONSTRAINT 별칭;
+
+#테이블 속성의 제약조건 변경
+ALTER TABLE table ALTER COLUMN 속성 SET 제약조건;
+
+#기본값 제약조건
+설정 : ALTER TABLE table ALTER COLUMN 속성 SET DEFAULT 기본값;
+--이후 데이터 추가 시 DEFAULT를 입력하면 기본값으로 입력됨
+
+#NULL값 허용
+NULL : NULL값 허용(기본값이므로 생략해도 됨)
+NOT NULL : 필수 입력 사항(NULL값을 허용하지 않음), 기본키로 선정되면 자동으로 NOT NULL 설정

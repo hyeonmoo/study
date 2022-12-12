@@ -1,0 +1,19 @@
+압축파일 C드라이브에 풀기
+환경변수	JAVA_HOME -- jdk폴더
+	CLASSPATH -- .;%JAVA_HOME%\lib\tools.jar 등록
+cmd 실행 > cd C:\apache-tomcat-9.0.52\bin 후 startup이 정상적으로 된다면
+인터넷에서 localhost:8080 입력 후 톰캣 홈피 나오면 성공 > shutdown으로 종료
+
+eclipse.ini 실행(메모장) > -vm난에 jdk폴더\bin\javaw.exe 삽입 후 저장종료
+
+sts-bundle -> sts-3.9.17.REALEASE폴더에서 STS.exe파일 실행
+FILE > new > Spring Legacy Project > 프로젝트 이름 입력 후 Spring MVC Project 선택 후 next
+> 도메인 이름 설정 후 finish
+# Spring MVC Project가 안보인다 > Configure templates... > spring-defaults빼고 다 삭제 후 재시작
+
+좌하단 서버 공간에 우클릭 > new > tomcat v9.0 검색 후 경로지정(apache-tomcat-9.0.52까지)
+
+서버 실행: 프로젝트 우클릭 > Run on server > tomcat으로 지정
+
+외부 브라우저로 출력하기: Window>Preferences>General>Web Browser
+Use external web browser체크, 실행할 브라우저 선택 후 적용
