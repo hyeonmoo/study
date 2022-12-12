@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form example</title>
+    <style>
+        fieldset{
+            width: 600px;
+        }
+        input[type="image"]{
+            vertical-align: middle;
+        }
+        textarea{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <form name="로그인" action="" method="post" target="_blank" autocomplete="off">
+        <fieldset>
+            <legend>로그인</legend>
+            <input type="hidden" value="사이트를 통한 직접 로그인">
+            <label for="id">아이디 : <input type="text" id="id" size="15"></label>
+            <label for="pw">비밀번호 : <input type="password" id="pw" size="15"></label>
+            <input type="image" src="img/login2.png" alt="로그인" height="30" onclick="window.open('http://127.0.0.1:5500/form.html')">
+        </fieldset>
+        
+    </form>
+    <form action="">
+        <fieldset>
+            <legend>상품선택</legend>
+            <p>주문할 상품을 선택해 주세요</p>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="s_3">선물용 3kg</label>
+                    <label><input type="number" min="0" max="5">개(최대5개)</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" value="s_5">선물용 5kg</label>
+                    <label><input type="number" min="0" max="3" value="1">개(최대 3개)</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" value="s_3">가정용 3kg</label>
+                    <label><input type="range" min="0" max="5">개(최대5개)</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" value="s_5">가정용 5kg</label>
+                    <label><input type="range" min="0" max="3" value="1">개(최대3개)</label>
+                </li>
+            </ul>
+            <p>포장 선택</p>
+            <label><input type="radio" name="gift" value="gift">선물포장</label>
+            <label><input type="radio" name="gift" value="no">선물포장안함</label>
+            <p><input type="submit"></p>
+        </fieldset>
+        <fieldset>
+            <legend>드롭다운</legend>
+            <label for="prod1">상품선택:</label>
+            <select id="prod1">
+                <option value="special_3" selected>선물용 3kg</option>
+                <option value="special_5">선물용 5kg</option>
+                <option value="family_3">가정용 3kg</option>
+                <option value="family_3">가정용 5kg</option>
+            </select>
+            <label for="prod2">포장 여부:</label>
+            <input type="text" id="prod2" list="pack">
+            <datalist id="pack">
+                <option value="선물 포장"></option>
+                <option value="선물 포장 안함"></option>
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>배송 정보</legend>
+            <ul>
+                <li>
+                    <label for="order-name">상품검색:</label>
+                    <input type="search" id="order-name" autofocus>
+                </li>
+                <li>
+                    <label for="user-order">주문상품:</label>
+                    <input type="text" id="user-order" readonly value="가정용 5kg">
+                </li>
+                <li>
+                    <label for="user-name">이름:</label>
+                    <input type="text" id="user-name" required>
+                </li>
+                <li>
+                    <label for="addr">배송 주소:</label>
+                    <input type="text" id="addr" required>
+                </li>
+                <li>
+                    <label for="mail">이메일 주소:</label>
+                    <input type="email" id="mail">
+                </li>
+                <li>
+                    <label for="phone">연락처:</label>
+                    <input type="tel" id="phone" placeholder="'-'없이 입력" required>
+                </li>
+                <li>
+                    <label for="d-day">배송 지정:</label>
+                    <input type="date" id="d-day"> (주문일로부터 최소 3일 이후)
+                </li>
+                <li>
+                    <label for="memo">메모:</label>
+                    <textarea id="memo" cols="40" rows="4"></textarea>
+                </li>
+            </ul>
+            <input type="submit" value="완료">
+            <input type="reset" value="취소">
+        </fieldset>
+        <fieldset>
+            <legend>날짜 지정</legend>
+            <input type="date" min="2022-08-01" max="2022-08-31">
+            <input type="month">
+            <input type="week">
+        </fieldset>
+        <fieldset>
+            <legend>시간 설정</legend>
+            <p>
+                <input type="time">
+                <input type="datetime-local">
+            </p>
+            <input type="submit" value="설정">
+        </fieldset><br>
+        <input type="button" value="영상 보기"
+        onclick="window.open('https://www.youtube.com/')">
+        <fieldset>
+            <legend>반품정보</legend>
+            <p>만일 수령한 상품에 문제가 있다면 즉시 반품을 신청해주세요.</p>
+            <p>반품 신청 시 상품의 상태를 사진으로 첨부해 주세요.</p>
+            <hr>
+            <input type="file">
+        </fieldset>
+    </form>
+    <hr style="width: 650px;" align="left">
+    <button type="submit">주문완료</button>
+    <button type="reset">주문취소</button>
+</body>
+</html>

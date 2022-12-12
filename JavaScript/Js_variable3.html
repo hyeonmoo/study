@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numArr=[prompt('50 미만인 숫자를 입력하세요'),prompt('50 미만인 숫자를 입력하세요')];
+        if(numArr[0]>=50||numArr[1]>=50){
+            alert('두 숫자 중 50 이상인 숫자가 있습니다.');
+        } else{
+            if(numArr[0]<10||numArr[1]<10){
+                alert('두 숫자 중 10 미만인 숫자가 한 개 이상 있습니다.');
+            } else{
+                alert('두 숫자 모두 10 이상인 숫자들입니다.')
+            }
+        }
+    </script>
+</body>
+</html>

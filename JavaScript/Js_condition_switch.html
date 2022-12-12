@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #333;}
+        p{
+            margin-top:80px;
+            font-family: sf싸락눈;
+            font-size:30px;
+            color:white;
+            text-shadow: 0 0 5px white;
+            text-align: center;
+        }
+        strong{
+            color:gold;
+            text-shadow: 0 0 5px gold;
+            font-size:1.5em;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var str=prompt('관심 세션을 선택해주세요');
+        switch(str){
+            case '1': case '마케팅': case '1-마케팅':
+                document.write('<p>마케팅 세션은 <strong>201호</strong>에서 진행됩니다.</p>');
+                break;
+            case '2': case '개발': case '2-개발':
+                document.write('<p>개발 세션은 <strong>203호</strong>에서 진행됩니다.</p>');
+                break;
+            case '3': case '디자인': case '3-디자인':
+                document.write('<p>디자인 세션은 <strong>205호</strong>에서 진행됩니다.</p>');
+                break;
+        }
+    </script>
+</body>
+</html>

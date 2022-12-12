@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수 비교기</title>
+</head>
+<body>
+    <script>
+        var numArray=[
+                parseInt(prompt('첫번째 숫자 입력.')),
+                parseInt(prompt('두번째 숫자 입력.'))
+            ];
+        (function sumMulti(x,y){
+            if(x===y){
+                alert('두 수가 같습니다.');
+            } else if(x>y){
+                alert('더 큰 수: '+x);
+            } else{
+                alert('더 큰 수: '+y);
+            }
+        }(numArray[0],numArray[1]));
+    </script>
+</body>
+</html>

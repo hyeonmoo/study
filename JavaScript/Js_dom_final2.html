@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+        *{
+            font-family: 'Dongle', sans-serif;
+            box-sizing: border-box;
+        }
+        #container{
+            width:300px;
+            border:1px solid #555; border-radius: 10px;
+            padding:10px;
+            text-align: center;
+            margin:20px auto;
+        }
+        label{
+            margin-right:5px;
+            font-size:18pt;
+        }
+        input{
+            width:60px;
+            height:35px;
+            border:2px solid black; border-radius: 5px;
+            font-size:16pt;
+        }
+        input[type="button"]{
+            width:90px;
+            margin-left:10px;
+            background-color: black; color:white;
+        }
+        input[type="button"]:hover{background-color: #ccc; color:black;}
+        input[type="button"]:active{background-color: #fff; color:black;}
+        table{
+            border-collapse: collapse;
+            margin:5px auto;
+        }
+        td{
+            border:2px solid black;
+            padding:0 5px;
+            font-size:12pt;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="" id="createTableForm">
+            <input type="number" name="rows" id="rows">
+            <label for="rows">행</label>
+            <input type="number" name="cols" id="cols">
+            <label for="cols">열</label>
+            <input type="button" id="create" value="만들기" onclick="createTable(); return false;">
+        </form>
+    </div>
+    <table></table>
+
+    <script>
+        function createTable(){
+            const rows=document.getElementById('rows').value;
+            const cols=document.getElementById('cols').value;
+            let table=document.querySelector('table');
+            if(table.childNodes){
+                let trItems=document.querySelectorAll("tr");
+                for(let tr of trItems){
+                    tr.parentNode.removeChild(tr);
+                }
+            }
+            for(let i=0;i<rows;i++){
+                var newTr=document.createElement("tr");
+                for(let j=0;j<cols;j++){
+                    var newTd=document.createElement("td");
+                    var newText=document.createTextNode(i+', '+j);
+                    newTd.appendChild(newText);
+                    newTr.appendChild(newTd);
+                }
+                table.appendChild(newTr);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14장 마무리문제2</title>
+    <style>
+        *{
+            font-family: sf싸락눈;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        #container{
+            width:500px;
+            height:auto;
+            margin:20px auto;
+            border:1px solid coral;
+            display: grid;
+            grid-template-rows: 1fr 4fr 1fr;
+        }
+        #container h1{
+            width:1fr;
+            margin:0;
+            line-height: 100px;
+            background-color: #111;
+            color:coral;
+        }
+        #container > p{
+            color:coral;
+            font-weight: 800;
+            height:1fr;
+            padding-top:40px;
+            margin:0;
+        }
+        #table{
+            width:1fr;
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: repeat(auto-fill,minmax(auto,30px));
+        }
+        .docs{
+            border-right:1px solid coral;
+            border-bottom:1px solid coral;
+            padding-top:6px;
+            color:coral;
+        }
+        .docs:nth-of-type(10n){
+            border-right: 0;
+        }
+        .docs:hover{
+            transition:all 0.3s;
+            background-color: coral;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>3의 배수 찾기</h1>
+        <div id="table">
+            <script>
+                var inputNum=prompt('몇까지의 3의 배수들을 찾을까요?');
+                var cnt=0;
+                if(inputNum){
+                    for(var i=1;i<=inputNum;i++){
+                        if(i%3==0){
+                            cnt++;
+                            document.write('<div class="docs">'+i+'</div>');
+                        }
+                    }
+                    document.write('</div><p>'+inputNum+'까지 3의 배수의 개수: '+cnt+'</p>');
+                } else{
+                    alert('취소되었습니다.');
+                }
+            </script>
+    </div>
+</body>
+</html>

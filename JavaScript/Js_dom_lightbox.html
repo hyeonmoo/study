@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        *{box-sizing: border-box;}
+        .row{width:620px;margin:0 auto;}
+        .row ul{list-style: none;margin:0;padding:0;}
+        .row ul li{display: inline;}
+        .pic{width:200px;}
+        #lightbox{
+            position:fixed; top:0; left:0;
+            width:100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+        #lightboxImage{
+            width:600px;
+            position:relative; left:20%;
+            border:5px solid #eee;
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <ul>
+            <li><img src="img/vamilokeycap300.jpg" data-src="img/vamilokeycap.jpg" class="pic"></li>
+            <li><img src="img/dog300.jpg" data-src="img/dog.jpg" class="pic"></li>
+            <li><img src="img/wave300.png" data-src="img/wave.png" class="pic"></li>
+            <li><img src="img/stone200.jpg" data-src="img/stone.jpg" class="pic"></li>
+            <li><img src="img/hanok200.jpg" data-src="img/hanok.jpg" class="pic"></li>
+            <li><img src="img/boxdoll200.png" data-src="img/boxdoll.png" class="pic"></li>
+        </ul>
+    </div>
+    <div id="lightbox">
+        <img src="img/vamilokeycap.jpg" id="lightboxImage">
+    </div>
+    <script>
+        let pics=document.getElementsByClassName("pic");
+        let lightbox=document.getElementById("lightbox");
+        let lightboxImage=document.getElementById("lightboxImage");
+
+        for(let i=0;i<pics.length;i++){
+            pics[i].addEventListener("click",showLightbox);
+        }
+        function showLightbox(){
+            let bigLocation=this.getAttribute("data-src");
+            lightboxImage.setAttribute("src",bigLocation);
+            lightbox.style.display="block";
+        }
+        lightbox.onclick=function(){
+            lightbox.style.display="none";
+        }
+    </script>
+</body>
+</html>

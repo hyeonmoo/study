@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.open</title>
+</head>
+<body>
+    <p>문서를 열면 팝업 창이 표시됩니다.</p>
+    <script>
+        let newWin=window.open("notice.html","pop","width=500, height=400, left=200, top=200");
+        if(!newWin){alert('팝업 차단이 설정되어있습니다. 팝업 차단을 해제해주시기 바랍니다.');}
+        newWin.moveBy(100,100);
+    </script>
+</body>
+</html>

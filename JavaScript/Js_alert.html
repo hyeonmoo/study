@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS alert</title>
+    <style>
+        *{font-family: sf싸락눈;}
+    </style>
+</head>
+<body>
+    <script>
+        alert('안녕하세여');
+        var name=prompt('이름을 입력하세요','강현무');
+        var reply=confirm('정말 배경 이미지를 바꾸겠습니까?');
+        console.log(reply);
+        document.write("<h1>"+name+"님 어서오세요.</hr>");
+        if(reply){
+            var body=document.querySelector('body');
+            body.style.backgroundColor='#ddf';
+        }
+        console.log(name+"님 환영합니다.");
+    </script>
+</body>
+</html>

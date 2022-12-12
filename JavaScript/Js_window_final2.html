@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마무리문제2</title>
+    <style>
+        #bttn{
+            display: block;
+            margin:50px auto;
+            width:200px;
+            height:100px;
+            font:30px sf싸락눈;
+        }
+    </style>
+</head>
+<body>
+    <button id="bttn">현재 시간 보기</button>
+    <script>
+        function displayTime(doc,win,w,h){
+            var left=(screen.availWidth-w)/2;
+            var top=(screen.availHeight-h)/2;
+            var option=`width=${w},height=${h},left=${left},top=${top}`;
+            window.open(doc,win,option);
+        }
+        document.querySelector("#bttn").onclick=displayTime("Js_window_final1.html","win",400,200);
+    </script>
+</body>
+</html>

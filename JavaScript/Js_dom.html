@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{font-family: sf싸락눈;}
+        .container{
+            text-align: center;
+            width:500px;
+            margin:50px auto;
+        }
+        img{
+            width:300px;
+            height:300px;
+            display: block;
+            margin:auto;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+        #rect{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+            margin:30px auto;
+            background-color:salmon;
+            transition:1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="inntext()">innerText로 표시하기</button>
+        <button onclick="innhtml()">innerHTML로 표시하기</button>
+        <h1>현재 시각</h1>
+        <div id="current"></div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <img src="img/dog.jpg" id="dog">
+    </div>
+    <hr>
+
+    <div class="container">
+        <img src="img/dog.jpg" alt="dog" id="dogg">
+        <p id="eventpage"></p>
+    </div>
+    <hr>
+
+    <div class="container">
+        <img src="img/happyLoopy.jpg" id="loopy">
+    </div>
+    <hr>
+
+    <div class="container">
+        <p>도형 위로 마우스 포인터를 올려놓으세요.</p>
+        <div id="rect"></div>
+    </div>
+
+    <script>
+        //innerText와 innerHTML차이 알아보기
+        let now=new Date();
+        function inntext(){document.getElementById('current').innerText=`<em>${now}</em>`;}
+        function innhtml(){document.getElementById('current').innerHTML=`<em>${now}</em>`;}
+        //마우스 클릭 시 사진 바꾸기
+        let change=true;
+        let dog=document.querySelector("#dog");
+        dog.onclick=changeImg;
+        function changeImg(){
+            if(change){
+                dog.src="img/cat.jpg";
+                change=false;
+            } else{
+                dog.src="img/dog.jpg";
+                change=true;
+            }
+        }
+        //이벤트 정보
+        var dogg=document.querySelector("#dogg");
+        dogg.onclick=function(event){
+            document.querySelector('#eventpage').innerHTML=`이벤트유형: ${event.type}, 
+            이벤트 발생위치: ${event.pageX},${event.pageY}
+            <br>클릭한 이미지 파일: ${this.src}`;
+        }
+        //addEventListener()함수(이미지파일)
+        let loopy=document.getElementById("loopy");
+        loopy.addEventListener("mouseover",function(){
+            loopy.src="img/SsakLoopy.jpg";
+        });
+        loopy.addEventListener("mouseout",function(){
+            loopy.src="img/happyLoopy.jpg";
+        });
+        //addEventListener()함수(도형)
+        var myRect=document.querySelector("#rect");
+        myRect.addEventListener("mouseover",function(){
+            myRect.style.backgroundColor="lightblue";
+            myRect.style.borderRadius="50%";
+        });
+        myRect.addEventListener("mouseout",function(){
+            myRect.style.backgroundColor="salmon";
+            myRect.style.borderRadius="";
+        });
+    </script>
+</body>
+</html>

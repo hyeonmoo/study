@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sf싸락눈;
+            text-align: center;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        div:not(#container){
+            border:2px solid #acf;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 10px 0 10px;
+        }
+        h1{
+            text-shadow: 0 0 10px blue;
+            color:aliceblue;
+            border:2px solid #acf;
+            line-height: 50px;
+            padding-top:5px;
+            width:1fr;
+        }
+        h3{
+            margin:5px;
+            color:white;
+            text-shadow: 0 0 3px blue;
+        }
+        p{
+            color:rgb(90, 120, 255);
+        }
+        div:not(#container):hover{
+            background-color: rgb(90, 120, 255);
+        }
+        div:not(#container):hover h3{
+            text-shadow: 0 0 3px blue;
+        }
+        div:not(#container):hover p{
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단</h1>
+    <div id="container">
+    <script>
+        for(var i=2;i<=9;i++){
+            document.write("<div><h3>"+i+"단</h3><p>");
+            for(var j=1;j<=9;j++){
+                document.write(i+"X"+j+"="+i*j+"<br>");
+            }
+            document.write("</p></div>");
+        }
+    </script>
+    </div>
+</body>
+</html>

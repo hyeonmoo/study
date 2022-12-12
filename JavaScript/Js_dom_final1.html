@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box; font-family: sf싸락눈;}
+        ul{list-style: none; padding:0;}
+        .list{width: 100px;}
+        .list:hover{cursor: pointer;}
+        .list:hover .check{
+            color:black;
+        }
+        .check{
+            margin-right:10px;
+            color:#bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>할 일 목록</h1>
+        <ul id="todoList">
+            <li class="list"><span class="check">&check;</span><span>할일 1</span></li>
+            <li class="list"><span class="check">&check;</span><span>할일 2</span></li>
+            <li class="list"><span class="check">&check;</span><span>할일 3</span></li>
+            <li class="list"><span class="check">&check;</span><span>할일 4</span></li>
+            <li class="list"><span class="check">&check;</span><span>할일 5</span></li>
+        </ul>
+        <button id="reset">clear</button>
+    </div>
+    <script>
+        let todoLists=document.querySelectorAll(".list");
+        for(let list of todoLists){
+            list.addEventListener("click", function(){
+                list.childNodes[1].style.textDecoration="line-through";
+                list.childNodes[0].style.color="red";
+            });
+        }
+        let resetBt=document.getElementById('reset');
+        resetBt.addEventListener("click", function(){
+            for(let list of todoLists){
+                list.childNodes[1].style.textDecoration="none";
+                list.childNodes[0].style.color="#bbb";
+            }
+        });
+    </script>
+</body>
+</html>

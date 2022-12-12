@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팩토리얼</title>
+    <style>
+        body{
+            padding-top:20px;
+            text-align: center;
+            font-family: sf싸락눈;
+        }
+    </style>
+</head>
+<body>
+    <h1>while문을 이용한 팩토리얼 계산</h1>
+    <script>
+        var n = prompt('숫자를 입력하세요.',10);
+        var input=parseInt(n);
+        var msg="";
+        if(n){
+            var fac=1;
+            while(input>=1){
+                fac*=input--;
+            }
+            msg="<h2>"+n+"! = "+fac+"</h2>";
+            fac=1;
+            input=1;
+            while(input<n){
+                fac*=input++;
+            }
+            msg+="<h2>"+(n-1)+"! = "+fac+"</h2>";
+        } else msg="<h2>값을 입력하지 않았습니다.</h2>";
+        document.write(msg);
+    </script>
+</body>
+</html>

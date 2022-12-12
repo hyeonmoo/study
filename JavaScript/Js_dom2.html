@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{font-family: sf싸락눈;font-weight: bold;}
+        html{border:5px solid #f55;padding:20px;}
+        body{border:5px solid #5f5;padding:20px;}
+        fieldset{border:5px solid #55f;padding:20px;}
+        input{border:5px solid #555;padding:20px;}
+    </style>
+</head>
+<body>
+    <h1>웹 개발 공부</h1>
+    <ul>
+        <li class="col">css</li>
+        <li class="col">html</li>
+        <li class="col">js</li>
+    </ul>
+
+    <div class="contents1">
+        <div class="col1">querySelector와 getElementById비교1</div>
+    </div>
+    <div class="contents2">
+        <div class="col2">querySelector와 getElementById비교2</div>
+    </div>
+
+    <fieldset>
+        <legend>event propagtion</legend>
+        <input type="button" value="target" id="target">
+    </fieldset>
+    <script>
+        let tgs=document.getElementsByClassName('col');
+        for(let t=0; t<tgs.length;t++){
+            tgs[t].style.color='#17f';
+        }
+        document.querySelector('.col1').style.color="#f55";
+        document.getElementsByClassName("col2")[0].style.color="#55f"
+
+        function handler(event){
+            let phases=['capturing','target','bubbling'];
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+        }
+            document.getElementById('target').addEventListener('click',handler,false);
+            document.querySelector('fieldset').addEventListener('click',handler,false);
+            document.querySelector('body').addEventListener('click',handler,false);
+            document.querySelector('html').addEventListener('click',handler,false);
+            //true시 캡처링, false시 버블링
+    </script>
+</body>
+</html>

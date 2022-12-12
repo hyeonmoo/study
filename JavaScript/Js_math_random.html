@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            font:18pt sf싸락눈;
+        }
+        h1{
+            width:180px;
+            font-size:25pt;
+            margin:50px auto;
+            background-color: black;
+            color:white;
+            border-radius: 15px;
+            padding:0;
+        }
+        #win{
+            color:red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>당첨자 발표</h1>
+    <p id="totalNumber"></p>
+    <p id="winner"></p>
+    <script>
+        var totalNumber=prompt('전체 응모자 수를 입력하세요.');
+        document.querySelector('#totalNumber').innerHTML='전체 응모자 수: '+totalNumber+'명';
+        var winner=Math.floor(Math.random()*totalNumber+1);
+        document.querySelector('#winner').innerHTML='당첨자: <span id="win">'+winner+'</span>번';
+    </script>
+</body>
+</html>
